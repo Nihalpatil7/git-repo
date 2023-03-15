@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage ("copy-index") {
 			steps {
-				sh "docker cp /mnt/data/index.html 23Q1:/usr/local/apache2/htdocs/"
+				sh "docker cp /mnt/data/index.html q1:/usr/local/apache2/htdocs/"
 			}
 		}
 	}
