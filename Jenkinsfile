@@ -2,13 +2,13 @@ pipeline {
 	agent {
 		label {
 			label "built-in"
-			customWorkspace "/mnt/data"
+			customWorkspace "mnt/project/"
 		}
 	}
 	stages {
-		stage ("copy-index") {
+		stage ("playbook-run") {
 			steps {
-				sh "docker cp /mnt/data/index.html q1:/usr/local/apache2/htdocs/"
+				sh "ansible-playbook test.yaml"
 			}
 		}
 	}
