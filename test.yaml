@@ -1,5 +1,4 @@
----
-#target section
+--- #target section
 - hosts: devenv[0]
   user: np
   become: yes
@@ -8,13 +7,13 @@
   
   tasks:
     - name: install-httpd
-	  action: yum pkg=httpd state=present
-	  
-	- name: start-httpd
-	  action: service pkg=httpd state=started
-	  
-	- name: copy-index
-	  action: copy src=index.html dest=/var/www/html/
-	  
-	- name: permission
-	  command: chmod -R 777 /var/www/html/index.html
+      action: yum pkg=httpd state=present
+      
+    - name: start-httpd
+      action: service pkg=httpd state=started
+      
+    - name: copy-index
+      action: copy src=index.html dest=/var/www/html/
+      
+    - name: permission
+      command: chmod -R 777 /var/www/html/index.html
