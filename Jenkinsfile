@@ -2,13 +2,15 @@ pipeline {
 	agent {
 		label {
 			label "built-in"
-			customWorkspace "/mnt/project"
+			
 		}
 	}
 	stages {
 		stage ("playbook-run") {
 			steps {
-				sh "ansible-playbook test.yaml"
+				sh "rm -rf /var/www/html/*"
+				sh "cp index.html /var/www/html/"
+				sh "chmod 777 /var/www/html/index.html"
 			}
 		}
 	}
