@@ -2,13 +2,13 @@ pipeline {
 	agent {
 		label {
 			label "built-in"
-			customWorkspace "/mnt/project"
+			
 		}
 	}
 	stages {
 		stage ("copy-index") {
 			steps {
-				sh "docker cp /mnt/project/index.html q2:/usr/local/apache2/htdocs/"
+				sh "cp /var/lib/jenkins/workspace/test_23Q2/index.html /var/www/html/"
 			}
 		}
 	}
