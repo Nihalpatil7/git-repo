@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage ("copy-index") {
 			steps {
-				sh "cp /var/lib/jenkins/workspace/master/index.html /var/www/html/"
+				sh "cp /var/lib/jenkins/workspace/test_master/index.html /var/www/html/"
 			}
 		}
 	}
